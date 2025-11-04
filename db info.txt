@@ -1,4 +1,10 @@
-HOSTED DATABASE: (HOSTINGER): 
+LOCAL DB: 
+db_name: dkv_db
+db_username: root
+db_password: 
+
+
+HOSTED DB: (HOSTINGER):
 db_name: dkv_db
 db_username: dkv_admin
 db_pass: Dkventures%123
@@ -6,7 +12,3 @@ db_pass: Dkventures%123
 db_name: u748716185_
 db_username: u748716185_
 
-LOCAL DATABASE: 
-db_name: dkv_db
-db_username: root
-db_password:
