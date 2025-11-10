@@ -57,6 +57,52 @@
         color: #b8860b;
         text-transform: capitalize;
       }
+
+      /* ✅ Multi-card carousel arrows - positioned correctly */
+      .project .carousel {
+        position: relative;
+      }
+
+      .project .carousel-control-prev,
+      .project .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: transparent !important;
+        border: none;
+        z-index: 10;
+      }
+
+      .project .carousel-control-prev {
+        left: 10px; /* ✅ inside slider */
+      }
+
+      .project .carousel-control-next {
+        right: 10px; /* ✅ inside slider */
+      }
+
+      .project .carousel-control-prev span,
+      .project .carousel-control-next span {
+        font-size: 46px;
+        font-weight: 900;
+        color: #2d3e7b;
+        line-height: 1;
+        user-select: none;
+      }
+
+      /* ✅ Cards always readable on mobile */
+      @media (max-width: 576px) {
+        .project .carousel-item .row > div {
+          width: 100%;
+          margin-bottom: 12px;
+        }
+        .project .card-img-top {
+          width: 100%;
+          height: auto;
+        }
+      }
     </style>
   </head>
 
@@ -134,7 +180,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-light py-3 px-4">
         <a
           href="index.html"
-          class="navbar-brand p-0 d-flex flex-column align-items-start"
+          class="navbar-brand p-0 d-flex flex-column align-items-center"
         >
           <img
             src="img/logo.png"
@@ -231,8 +277,8 @@
       <div class="container py-5">
         <!-- Title -->
         <div class="text-center mx-auto pb-4" style="max-width: 800px">
-          <p class="text-uppercase text-secondary fs-5 mb-0">Our Projects</p>
-          <h2 class="display-4 text-capitalize mb-3">Our Portfolio</h2>
+          <!-- <p class="text-uppercase text-secondary fs-5 mb-0">Our Projects</p> -->
+          <!-- <h2 class="display-4 text-capitalize mb-3">Our Portfolio</h2> -->
         </div>
 
         <!-- TAB BUTTONS -->
@@ -258,102 +304,288 @@
         <div class="tab-content">
           <!-- ✅ ONGOING PROJECTS -->
           <div class="tab-pane fade show active" id="ongoing">
-            <div class="row g-5">
-              <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm border-0">
-                  <img
-                    src="img/indralok-nagari.jpg"
-                    class="card-img-top"
-                    alt="Indralok Nagari"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Indralok Nagari</h5>
-                    <p class="mb-1"><strong>Location:</strong> NIBM Pune</p>
-                    <p class="mb-1"><strong>1 & 2 BHK</strong></p>
-                    <p class="text-primary">
-                      <strong>Starting ₹ 32 Lakhs*</strong>
-                    </p>
-                    <a href="#" class="btn btn-primary w-100">Know More</a>
+            <div
+              id="ongoingSlider"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card shadow-sm border-0">
+                        <img
+                          src="img/indralok-nagari.jpg"
+                          class="card-img-top"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Indralok Nagari</h5>
+                          <p class="mb-1"><strong>N/A Plots</strong></p>
+                          <!-- <p class="mb-1"><strong>1 & 2 BHK</strong></p>
+                          <p class="text-primary">
+                            <strong>Starting ₹ 32 Lakhs*</strong>
+                          </p>
+                          <a href="#" class="btn btn-primary w-100"
+                            >Know More</a
+                          > -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card shadow-sm border-0">
+                        <img src="img/sainagari.jpg" class="card-img-top" />
+                        <div class="card-body">
+                          <h5 class="card-title">Sai Nagari</h5>
+                          <!-- <p class="mb-1">
+                            <strong>Location:</strong> Undri Pune
+                          </p> -->
+                          <p class="mb-1"><strong>N/A Plots</strong></p>
+                          <!-- <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
+                          <p class="text-primary">
+                            <strong>Starting ₹ 28 Lakhs*</strong>
+                          </p>
+                          <a href="#" class="btn btn-primary w-100"
+                            >Know More</a
+                          > -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card shadow-sm border-0">
+                        <img src="img/anandavan.jpg" class="card-img-top" />
+                        <div class="card-body">
+                          <h5 class="card-title">Anandvan</h5>
+                          <p class="mb-1"><strong>N/A Plots</strong></p>
+                          <!-- <p class="mb-1">
+                            <strong>Location:</strong> Hadapsar Pune
+                          </p>
+                          <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
+                          <p class="text-primary">
+                            <strong>Starting ₹ 35 Lakhs*</strong>
+                          </p>
+                          <a href="#" class="btn btn-primary w-100"
+                            >Know More</a
+                          > -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Second slide (repeat 3 more if needed) -->
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <!-- Repeat 3 new cards here -->
+                    <div class="row justify-content-center">
+                      <div class="col-md-4">
+                        <div class="card shadow-sm border-0">
+                          <img src="img/kuber-park.png" class="card-img-top" />
+                          <div class="card-body">
+                            <h5 class="card-title">Kuber Park</h5>
+                            <p class="mb-1"><strong>N/A Plots</strong></p>
+                            <!-- <p class="mb-1"><strong>1 & 2 BHK</strong></p>
+                            <p class="text-primary">
+                              <strong>Starting ₹ 32 Lakhs*</strong>
+                            </p>
+                            <a href="#" class="btn btn-primary w-100"
+                              >Know More</a
+                            > -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="card shadow-sm border-0">
+                          <img
+                            src="img/rustic-meadows.jpg"
+                            class="card-img-top"
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title">Rustic Meadows</h5>
+                            <p class="mb-1"><strong>N/A Plots</strong></p>
+                            <!-- <p class="mb-1">
+                              <strong>Location:</strong> Undri Pune
+                            </p>
+                            <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
+                            <p class="text-primary">
+                              <strong>Starting ₹ 28 Lakhs*</strong>
+                            </p>
+                            <a href="#" class="btn btn-primary w-100"
+                              >Know More</a
+                            > -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="card shadow-sm border-0">
+                          <img src="img/devbhoomi.jpg" class="card-img-top" />
+                          <div class="card-body">
+                            <h5 class="card-title">Dev Bhoomi</h5>
+                            <p class="mb-1"><strong>N/A Plots</strong></p>
+                            <!-- <p class="mb-1">
+                              <strong>Location:</strong> Hadapsar Pune
+                            </p>
+                            <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
+                            <p class="text-primary">
+                              <strong>Starting ₹ 35 Lakhs*</strong>
+                            </p>
+                            <a href="#" class="btn btn-primary w-100"
+                              >Know More</a
+                            > -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm border-0">
-                  <img
-                    src="img/sainagari.jpg"
-                    class="card-img-top"
-                    alt="Sai Nagari"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Sai Nagari</h5>
-                    <p class="mb-1"><strong>Location:</strong> Undri Pune</p>
-                    <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                    <p class="text-primary">
-                      <strong>Starting ₹ 28 Lakhs*</strong>
-                    </p>
-                    <a href="#" class="btn btn-primary w-100">Know More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm border-0">
-                  <img
-                    src="img/anandavan.jpg"
-                    class="card-img-top"
-                    alt="Anandvan"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Anandvan</h5>
-                    <p class="mb-1"><strong>Location:</strong> Hadapsar Pune</p>
-                    <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                    <p class="text-primary">
-                      <strong>Starting ₹ 35 Lakhs*</strong>
-                    </p>
-                    <a href="#" class="btn btn-primary w-100">Know More</a>
-                  </div>
-                </div>
-              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#ongoingSlider"
+                data-bs-slide="prev"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8249;</span
+                >
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#ongoingSlider"
+                data-bs-slide="next"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8250;</span
+                >
+              </button>
             </div>
           </div>
+
           <!-- ✅ END ONGOING -->
 
-          <!-- ✅ COMPLETED PROJECTS -->
+          <!-- ✅ start COMPLETED PROJECTS -->
           <div class="tab-pane fade" id="completed">
-            <div class="row g-5">
-              <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm border-0">
-                  <img src="img/devbhoomi.jpg" class="card-img-top" alt="" />
-                  <div class="card-body">
-                    <h5 class="card-title">Devbhoomi</h5>
-                    <p><strong>Status: Completed</strong></p>
-                    <a href="#" class="btn btn-outline-primary w-100"
-                      >View Gallery</a
-                    >
+            <div
+              id="completedSlider"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card shadow-sm border-0">
+                        <img src="img/devbhoomi.jpg" class="card-img-top" />
+                        <div class="card-body text-center">
+                          <h5 class="card-title">Devbhoomi</h5>
+                          <!-- <p><strong>Status: Completed</strong></p> -->
+                          <p class="mb-1"><strong>N/A Plots</strong></p>
+                          <!-- <a href="#" class="btn btn-outline-primary w-100"
+                              >View Gallery</a
+                            > -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Add 2 more completed projects -->
                   </div>
                 </div>
               </div>
-              <!-- Add more completed projects same way -->
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#completedSlider"
+                data-bs-slide="prev"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8249;</span
+                >
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#completedSlider"
+                data-bs-slide="next"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8250;</span
+                >
+              </button>
+            </div>
+          </div>
+          <!-- ✅ END COMPLETED PROJECTS -->
+
+          <!-- ✅ start COMMERCIAL PROJECTS -->
+          <div class="tab-pane fade" id="commercial">
+            <div
+              id="commercialSlider"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card shadow-sm border-0">
+                        <img
+                          src="img/rustic-meadows.jpg"
+                          class="card-img-top"
+                        />
+                        <div class="card-body text-center">
+                          <h5 class="card-title">Rustic Park</h5>
+                          <p class="mb-1"><strong>N/A Plots</strong></p>
+                          <!-- <p><strong>Shops & Offices</strong></p>
+                          <a href="#" class="btn btn-primary w-100"
+                            >Know More</a
+                          > -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Add 2 more commercial projects -->
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#commercialSlider"
+                data-bs-slide="prev"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8249;</span
+                >
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#commercialSlider"
+                data-bs-slide="next"
+                style="background: transparent; border: none"
+              >
+                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
+                  >&#8250;</span
+                >
+              </button>
             </div>
           </div>
 
-          <!-- ✅ COMMERCIAL PROJECTS -->
-          <div class="tab-pane fade" id="commercial">
-            <div class="row g-5">
-              <div class="col-lg-4 col-md-6">
-                <div class="card shadow-sm border-0">
-                  <img src="img/rustic-meadows.jpg" class="card-img-top" />
-                  <div class="card-body">
-                    <h5 class="card-title">Rustic Park</h5>
-                    <p><strong>Shops & Offices</strong></p>
-                    <a href="#" class="btn btn-primary w-100">Know More</a>
-                  </div>
-                </div>
-              </div>
-              <!-- Add more commercial projects same way -->
-            </div>
-          </div>
+          <!-- ✅ END COMMERCIAL PROJECTS -->
         </div>
       </div>
     </div>
