@@ -12,3 +12,8 @@ db_pass: Dkventures%123
 db_name: u748716185_
 db_username: u748716185_
 
+
+To access contact form submissions.
+use the link: https://dkventures.co.in/admin/
+username: admin
+password: Dkventures@123

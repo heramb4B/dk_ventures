@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dkv_db";
+$servername = "127.0.0.1";
+$username = "u748716185_dkv_admin";
+$password = "Dkventures%123";
+$dbname = "u748716185_dkv_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
