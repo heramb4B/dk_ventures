@@ -59,11 +59,11 @@
       }
 
       /* ✅ Multi-card carousel arrows - positioned correctly */
-      .project .carousel {
+      /* .project .carousel {
         position: relative;
-      }
+      } */
 
-      .project .carousel-control-prev,
+      /* .project .carousel-control-prev,
       .project .carousel-control-next {
         position: absolute;
         top: 50%;
@@ -76,24 +76,28 @@
       }
 
       .project .carousel-control-prev {
-        left: 10px; /* ✅ inside slider */
+        left: 10px; 
       }
 
       .project .carousel-control-next {
-        right: 10px; /* ✅ inside slider */
-      }
+        right: 10px; 
+      } */
 
-      .project .carousel-control-prev span,
+      /* .project .carousel-control-prev span,
       .project .carousel-control-next span {
         font-size: 46px;
         font-weight: 900;
         color: #2d3e7b;
         line-height: 1;
         user-select: none;
-      }
+      } */
+      /* .project-slider-wrapper .carousel-inner {
+        position: relative;
+        min-height: 350px; 
+      } */
 
       /* ✅ Cards always readable on mobile */
-      @media (max-width: 576px) {
+      /* @media (max-width: 576px) {
         .project .carousel-item .row > div {
           width: 100%;
           margin-bottom: 12px;
@@ -102,6 +106,118 @@
           width: 100%;
           height: auto;
         }
+      } */
+
+      /* === PROJECT SLIDER ARROWS (Outside the slider) === */
+      /* Wrapper gives space for arrows */
+      /* .project-slider-wrapper {
+        position: relative;
+        padding: 0 80px;
+      } */
+
+      /* Ensure proper height so arrows align mid-cards */
+      /* .project-slider-wrapper .carousel-inner {
+        position: relative;
+        min-height: 360px; 
+      } */
+
+      /* Arrows */
+      /* .project-slider-wrapper .carousel-control-prev,
+      .project-slider-wrapper .carousel-control-next {
+        position: absolute;
+        top: 45%; 
+        transform: none !important;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 50;
+      }
+
+      .project-slider-wrapper .carousel-control-prev {
+        left: -70px;
+      }
+
+      .project-slider-wrapper .carousel-control-next {
+        right: -70px;
+      }
+
+      .project-slider-wrapper .carousel-control-prev span,
+      .project-slider-wrapper .carousel-control-next span {
+        font-size: 42px;
+        color: #2d3e7b;
+        font-weight: bold;
+      } */
+
+      /* Mobile: keep arrows inside */
+      /* @media (max-width: 768px) {
+        .project-slider-wrapper {
+          padding: 0 20px;
+        }
+        .project-slider-wrapper .carousel-control-prev {
+          left: 10px;
+        }
+        .project-slider-wrapper .carousel-control-next {
+          right: 10px;
+        }
+      } */
+
+      /* WRAPPER */
+      .owl-project-wrapper {
+        position: relative;
+        padding: 0 90px; /* Space for arrows */
+      }
+
+      /* ARROWS */
+      /* .owl-nav button.owl-prev,
+      .owl-nav button.owl-next {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: white !important;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+      }
+
+      .owl-nav button.owl-prev {
+        left: -60px;
+      }
+
+      .owl-nav button.owl-next {
+        right: -60px;
+      } */
+
+      /* .owl-nav i {
+        font-size: 28px;
+        color: #2d3e7b;
+      } */
+
+      /* RESPONSIVE ARROWS */
+      @media (max-width: 768px) {
+        .owl-project-wrapper {
+          padding: 0 10px;
+        }
+        .owl-nav button.owl-prev {
+          left: 0;
+        }
+        .owl-nav button.owl-next {
+          right: 0;
+        }
+      }
+
+      .card img {
+        height: 220px;
+        object-fit: cover;
       }
     </style>
   </head>
@@ -273,319 +389,127 @@
     <!-- Header End -->
 
     <!-- Projects Start -->
-    <div class="container-fluid project py-5">
-      <div class="container py-5">
-        <!-- Title -->
-        <div class="text-center mx-auto pb-4" style="max-width: 800px">
-          <!-- <p class="text-uppercase text-secondary fs-5 mb-0">Our Projects</p> -->
-          <!-- <h2 class="display-4 text-capitalize mb-3">Our Portfolio</h2> -->
+    <div class="container py-5">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs justify-content-center mb-5">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#ongoing"
+            >Ongoing Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#completed"
+            >Completed Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#commercial"
+            >Commercial Projects</a
+          >
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- ONGOING -->
+        <div class="tab-pane fade show active" id="ongoing">
+          <div class="owl-project-wrapper">
+            <div class="owl-carousel project-carousel">
+              <!-- Project Card -->
+              <div class="card shadow-sm border-0">
+                <img src="img/indralok-nagari.jpg" />
+                <div class="card-body">
+                  <h5>Indralok Nagari</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+
+              <div class="card shadow-sm border-0">
+                <img src="img/sainagari.jpg" />
+                <div class="card-body">
+                  <h5>Sai Nagari</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+
+              <div class="card shadow-sm border-0">
+                <img src="img/anandavan.jpg" />
+                <div class="card-body">
+                  <h5>Anandvan</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+
+              <div class="card shadow-sm border-0">
+                <img src="img/kuber-park.png" />
+                <div class="card-body">
+                  <h5>Kuber Park</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+
+              <div class="card shadow-sm border-0">
+                <img src="img/rustic-meadows.jpg" />
+                <div class="card-body">
+                  <h5>Rustic Meadows</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+
+              <div class="card shadow-sm border-0">
+                <img src="img/devbhoomi.jpg" />
+                <div class="card-body">
+                  <h5>Dev Bhoomi</h5>
+                  <p>N/A Plots</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- TAB BUTTONS -->
-        <ul class="nav nav-tabs justify-content-center mb-5" id="projectTabs">
-          <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="tab" href="#ongoing"
-              >Ongoing Projects</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#completed"
-              >Completed Projects</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#commercial"
-              >Commercial Projects</a
-            >
-          </li>
-        </ul>
-
-        <!-- TAB CONTENT -->
-        <div class="tab-content">
-          <!-- ✅ ONGOING PROJECTS -->
-          <div class="tab-pane fade show active" id="ongoing">
-            <div
-              id="ongoingSlider"
-              class="carousel slide"
-              data-bs-ride="carousel"
-              data-bs-interval="5000"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row justify-content-center">
-                    <div class="col-md-4">
-                      <div class="card shadow-sm border-0">
-                        <img
-                          src="img/indralok-nagari.jpg"
-                          class="card-img-top"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">Indralok Nagari</h5>
-                          <p class="mb-1"><strong>N/A Plots</strong></p>
-                          <!-- <p class="mb-1"><strong>1 & 2 BHK</strong></p>
-                          <p class="text-primary">
-                            <strong>Starting ₹ 32 Lakhs*</strong>
-                          </p>
-                          <a href="#" class="btn btn-primary w-100"
-                            >Know More</a
-                          > -->
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="card shadow-sm border-0">
-                        <img src="img/sainagari.jpg" class="card-img-top" />
-                        <div class="card-body">
-                          <h5 class="card-title">Sai Nagari</h5>
-                          <!-- <p class="mb-1">
-                            <strong>Location:</strong> Undri Pune
-                          </p> -->
-                          <p class="mb-1"><strong>N/A Plots</strong></p>
-                          <!-- <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                          <p class="text-primary">
-                            <strong>Starting ₹ 28 Lakhs*</strong>
-                          </p>
-                          <a href="#" class="btn btn-primary w-100"
-                            >Know More</a
-                          > -->
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="card shadow-sm border-0">
-                        <img src="img/anandavan.jpg" class="card-img-top" />
-                        <div class="card-body">
-                          <h5 class="card-title">Anandvan</h5>
-                          <p class="mb-1"><strong>N/A Plots</strong></p>
-                          <!-- <p class="mb-1">
-                            <strong>Location:</strong> Hadapsar Pune
-                          </p>
-                          <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                          <p class="text-primary">
-                            <strong>Starting ₹ 35 Lakhs*</strong>
-                          </p>
-                          <a href="#" class="btn btn-primary w-100"
-                            >Know More</a
-                          > -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Second slide (repeat 3 more if needed) -->
-                <div class="carousel-item">
-                  <div class="row justify-content-center">
-                    <!-- Repeat 3 new cards here -->
-                    <div class="row justify-content-center">
-                      <div class="col-md-4">
-                        <div class="card shadow-sm border-0">
-                          <img src="img/kuber-park.png" class="card-img-top" />
-                          <div class="card-body">
-                            <h5 class="card-title">Kuber Park</h5>
-                            <p class="mb-1"><strong>N/A Plots</strong></p>
-                            <!-- <p class="mb-1"><strong>1 & 2 BHK</strong></p>
-                            <p class="text-primary">
-                              <strong>Starting ₹ 32 Lakhs*</strong>
-                            </p>
-                            <a href="#" class="btn btn-primary w-100"
-                              >Know More</a
-                            > -->
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <div class="card shadow-sm border-0">
-                          <img
-                            src="img/rustic-meadows.jpg"
-                            class="card-img-top"
-                          />
-                          <div class="card-body">
-                            <h5 class="card-title">Rustic Meadows</h5>
-                            <p class="mb-1"><strong>N/A Plots</strong></p>
-                            <!-- <p class="mb-1">
-                              <strong>Location:</strong> Undri Pune
-                            </p>
-                            <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                            <p class="text-primary">
-                              <strong>Starting ₹ 28 Lakhs*</strong>
-                            </p>
-                            <a href="#" class="btn btn-primary w-100"
-                              >Know More</a
-                            > -->
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <div class="card shadow-sm border-0">
-                          <img src="img/devbhoomi.jpg" class="card-img-top" />
-                          <div class="card-body">
-                            <h5 class="card-title">Dev Bhoomi</h5>
-                            <p class="mb-1"><strong>N/A Plots</strong></p>
-                            <!-- <p class="mb-1">
-                              <strong>Location:</strong> Hadapsar Pune
-                            </p>
-                            <p class="mb-1"><strong>1, 2 & 3 BHK</strong></p>
-                            <p class="text-primary">
-                              <strong>Starting ₹ 35 Lakhs*</strong>
-                            </p>
-                            <a href="#" class="btn btn-primary w-100"
-                              >Know More</a
-                            > -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <!-- COMPLETED -->
+        <div class="tab-pane fade" id="completed">
+          <div class="owl-project-wrapper">
+            <div class="owl-carousel project-carousel">
+              <div class="card shadow-sm border-0">
+                <img src="img/meridian crown.jpg" />
+                <div class="card-body">
+                  <h5>Meridian Crown</h5>
+                  <p>Apartments</p>
                 </div>
               </div>
 
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#ongoingSlider"
-                data-bs-slide="prev"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8249;</span
-                >
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#ongoingSlider"
-                data-bs-slide="next"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8250;</span
-                >
-              </button>
-            </div>
-          </div>
-
-          <!-- ✅ END ONGOING -->
-
-          <!-- ✅ start COMPLETED PROJECTS -->
-          <div class="tab-pane fade" id="completed">
-            <div
-              id="completedSlider"
-              class="carousel slide"
-              data-bs-ride="carousel"
-              data-bs-interval="5000"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row justify-content-center">
-                    <div class="col-md-4">
-                      <div class="card shadow-sm border-0">
-                        <img src="img/devbhoomi.jpg" class="card-img-top" />
-                        <div class="card-body text-center">
-                          <h5 class="card-title">Devbhoomi</h5>
-                          <!-- <p><strong>Status: Completed</strong></p> -->
-                          <p class="mb-1"><strong>N/A Plots</strong></p>
-                          <!-- <a href="#" class="btn btn-outline-primary w-100"
-                              >View Gallery</a
-                            > -->
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Add 2 more completed projects -->
-                  </div>
+              <div class="card shadow-sm border-0">
+                <img src="img/meridian gold.jpg" />
+                <div class="card-body">
+                  <h5>Meridian Gold</h5>
+                  <p>Apartments</p>
                 </div>
               </div>
 
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#completedSlider"
-                data-bs-slide="prev"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8249;</span
-                >
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#completedSlider"
-                data-bs-slide="next"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8250;</span
-                >
-              </button>
-            </div>
-          </div>
-          <!-- ✅ END COMPLETED PROJECTS -->
-
-          <!-- ✅ start COMMERCIAL PROJECTS -->
-          <div class="tab-pane fade" id="commercial">
-            <div
-              id="commercialSlider"
-              class="carousel slide"
-              data-bs-ride="carousel"
-              data-bs-interval="5000"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row justify-content-center">
-                    <div class="col-md-4">
-                      <div class="card shadow-sm border-0">
-                        <img
-                          src="img/rustic-meadows.jpg"
-                          class="card-img-top"
-                        />
-                        <div class="card-body text-center">
-                          <h5 class="card-title">Rustic Park</h5>
-                          <p class="mb-1"><strong>N/A Plots</strong></p>
-                          <!-- <p><strong>Shops & Offices</strong></p>
-                          <a href="#" class="btn btn-primary w-100"
-                            >Know More</a
-                          > -->
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Add 2 more commercial projects -->
-                  </div>
+              <div class="card shadow-sm border-0">
+                <img src="img/meridian Heights.jpg" />
+                <div class="card-body">
+                  <h5>Meridian Heights</h5>
+                  <p>Apartments</p>
                 </div>
               </div>
-
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#commercialSlider"
-                data-bs-slide="prev"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8249;</span
-                >
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#commercialSlider"
-                data-bs-slide="next"
-                style="background: transparent; border: none"
-              >
-                <span style="font-size: 40px; font-weight: bold; color: #2d3e7b"
-                  >&#8250;</span
-                >
-              </button>
             </div>
           </div>
+        </div>
 
-          <!-- ✅ END COMMERCIAL PROJECTS -->
+        <!-- COMMERCIAL -->
+        <div class="tab-pane fade" id="commercial">
+          <div class="owl-project-wrapper">
+            <div class="owl-carousel project-carousel">
+              <div class="card shadow-sm border-0">
+                <img src="img/PRATAVAS - COMMERCIAL PROJECT.jpg" />
+                <div class="card-body">
+                  <h5>PRATAVAS</h5>
+                  <p>COMMERCIAL PROJECT</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -723,6 +647,42 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Owl JS -->
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+      function initOwl() {
+        $(".project-carousel").owlCarousel({
+          loop: false,
+          margin: 25,
+          nav: false,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 2000,
+          navText: [
+            "<i class='fas fa-chevron-left'></i>",
+            "<i class='fas fa-chevron-right'></i>",
+          ],
+          responsive: {
+            0: { items: 1 },
+            576: { items: 2 },
+            992: { items: 3 },
+          },
+        });
+      }
+
+      initOwl();
+
+      // Re-init when switching tabs
+      $('a[data-bs-toggle="tab"]').on("shown.bs.tab", function () {
+        $(".project-carousel").trigger("destroy.owl.carousel");
+        initOwl();
+      });
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
